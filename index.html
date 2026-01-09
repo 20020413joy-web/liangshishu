@@ -28,6 +28,9 @@
         background: #4f6b45;
         box-shadow: inset 0 0 40px rgba(0,0,0,0.3), 0 10px 25px -5px rgba(0,0,0,0.1);
       }
+      .perspective-1000 { perspective: 1000px; }
+      .preserve-3d { transform-style: preserve-3d; }
+      .backface-hidden { backface-visibility: hidden; }
     </style>
 
     <script>
@@ -47,11 +50,9 @@
 
     <!-- 載入 Babel 讓瀏覽器支援 TSX 檔案 -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    
     <!-- 載入 Import Map Polyfill -->
     <script async src="https://ga.jspm.io/npm:es-module-shims@1.8.2/dist/es-module-shims.js"></script>
 
-    <!-- 重要：修正後的 Import Map，統一使用 React 18 -->
     <script type="importmap">
     {
       "imports": {
@@ -71,10 +72,12 @@
   <body>
     <div id="root"></div>
 
-    <!-- 透過 Babel 載入入口點 -->
-    <script type="text/babel" data-type="module">
-      import "./index.tsx";
-    </script>
+    <!-- 
+      核心關鍵：使用 Babel 載入 index.tsx。
+      移除 data-type="module" 以免受限於瀏覽器的嚴格 MIME type 檢查，
+      Babel 會自行 fetch 檔案內容並進行編譯。
+    -->
+    <script type="text/babel" data-presets="react,typescript" src="index.tsx"></script>
     
     <!-- KaTeX 核心腳本 -->
     <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
