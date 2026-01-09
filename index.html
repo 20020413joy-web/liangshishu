@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>良師塾 - 高一數學先修</title>
+    <!-- FIX: Force CSS1Compat mode for KaTeX in environments that lack a proper doctype or are in quirks mode -->
+    <script>
+      (function() {
+        if (typeof document !== 'undefined' && document.compatMode !== 'CSS1Compat') {
+          try {
+            Object.defineProperty(document, 'compatMode', {
+              get: function() { return 'CSS1Compat'; },
+              configurable: true
+            });
+          } catch (e) {
+            console.warn("Unable to override document.compatMode for KaTeX compatibility.");
+          }
+        }
+      })();
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
+      
+      body {
+        background-color: #f8f9fa;
+        background-image: linear-gradient(#e2e8f0 1px, transparent 1px),
+          linear-gradient(90deg, #e2e8f0 1px, transparent 1px);
+        background-size: 25px 25px;
+        background-position: center center;
+        font-family: 'Noto Sans TC', sans-serif;
+      }
+      ::-webkit-scrollbar {
+        width: 4px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e0;
+        border-radius: 10px;
+      }
+      .chalkboard-frame {
+        border: 10px solid #8b5e3c;
+        border-radius: 1.5rem;
+        background: #4f6b45;
+        box-shadow: inset 0 0 40px rgba(0,0,0,0.3), 0 10px 25px -5px rgba(0,0,0,0.1);
+      }
+      .nav-active {
+        color: #4a6741 !important;
+      }
+      .nav-active div {
+        background-color: #dcfce7;
+      }
+      .perspective-1000 { perspective: 1000px; }
+      .preserve-3d { transform-style: preserve-3d; }
+      .backface-hidden { backface-visibility: hidden; }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#4a6741',
+              secondary: '#8b5e3c',
+              chalkboard: '#4f6b45',
+              neutral: '#334155',
+            },
+          }
+        }
+      }
+    </script>
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.2.0",
+    "react/": "https://esm.sh/react@18.2.0/",
+    "react-dom": "https://esm.sh/react-dom@18.2.0",
+    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+    "react-router-dom": "https://esm.sh/react-router-dom@6.22.3?deps=react@18.2.0,react-dom@18.2.0",
+    "framer-motion": "https://esm.sh/framer-motion@11.0.8?deps=react@18.2.0,react-dom@18.2.0",
+    "lucide-react": "https://esm.sh/lucide-react@0.344.0?deps=react@18.2.0",
+    "recharts": "https://esm.sh/recharts@2.12.2?deps=react@18.2.0,react-dom@18.2.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
